@@ -6,8 +6,26 @@
 </head>
 <body>
 	<form action="ServletSample" method="post">
-		<input name="p1" />
-		<input type="submit">
+		<p>
+			P1: <input name="p1" />
+		</p>
+		<p>
+			P2: <input name="check" type="checkbox" />
+		</p>
+		<p>
+			P3: <input name="radio" type="radio" value="1"/>r1
+			<input name="radio" type="radio" value="2"/>r2
+		</p>
+		<p>
+			P3: <select name="select" multiple >
+			<option value="s1">s1</option>
+			<option value="s2">s2</option>
+			<option value="s3">s3</option>
+			</select>
+		</p>
+		<p>
+			<input type="submit" title="Send">
+		</p>
 	</form>
 </body>
 </html>
