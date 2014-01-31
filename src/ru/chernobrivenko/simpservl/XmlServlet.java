@@ -30,7 +30,8 @@ public class XmlServlet extends HttpServlet {
 			sc.setAttribute("p1c", request.getParameter("p1"));
 		}
 		
-		wr.printf("Session atribute: %s <br>",  (String) s.getAttribute("p1s"));
-		wr.printf("Context atribute: %s",  (String) sc.getAttribute("p1c"));
+		wr.printf("Session atribute: %s<br>",  (String) s.getAttribute("p1s"));
+		wr.printf("Context atribute: %s<br>",  (String) sc.getAttribute("p1c"));
+		wr.printf("Init param: %s", getServletConfig().getInitParameter("ipa"));
 	}
 }
