@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(description = "Simple servlet", urlPatterns = { "/ServletSample" }, 
+@WebServlet(description = "Simple servlet", urlPatterns = { "/ServletSample" },
 initParams={@WebInitParam(name="pi", value="test")})
 public class ServletSample extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class ServletSample extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter wr = response.getWriter();
 		response.setContentType("text/html");
-		wr.print("<h2>Test Get</h2>");
+		wr.printf("<h2>Test Get %s</h2>", getServletConfig().getInitParameter("pi"));
 		printParameterMap(request.getParameterMap(), wr);
 	}
 
