@@ -5,13 +5,15 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(description = "Simple servlet", urlPatterns = { "/ServletSample" })
+@WebServlet(description = "Simple servlet", urlPatterns = { "/ServletSample" }, 
+initParams={@WebInitParam(name="pi", value="test")})
 public class ServletSample extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
