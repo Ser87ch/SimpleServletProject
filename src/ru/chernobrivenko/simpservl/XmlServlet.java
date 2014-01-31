@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class XmlServlet extends HttpServlet {
 
@@ -17,6 +18,15 @@ public class XmlServlet extends HttpServlet {
 		PrintWriter wr = response.getWriter();
 		response.setContentType("text/html");
 		wr.print("<h2>Test Get</h2>");
+		
+		HttpSession s = request.getSession();
+		String str = (String) s.getAttribute("p1s");
+		if(str == "" || str == null)
+		{
+			s.setAttribute("p1s", request.getParameter("p1"));
+		}
+		
+		wr.printf("Session atribute: %s",  (String) s.getAttribute("p1s"));
 
 	}
 }
